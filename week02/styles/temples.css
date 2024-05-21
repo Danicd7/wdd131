@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    background-color: rgba(5, 5, 114, 0.516);
+    display: grid;
+    grid-gap: 1rem;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px #333;
+}
+
+header,
+main {
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+nav {
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+nav a {
+    flex: 1 1 100%;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    text-decoration: none;
+}
