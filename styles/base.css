@@ -142,7 +142,7 @@ footer {
     display: grid;
 }
 
-/* larger Views *************************/
+
 @media (min-width: 768px) {
     nav ul {
         display: flex;
