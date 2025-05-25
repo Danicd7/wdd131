@@ -22,7 +22,7 @@ h2 {
 }
 
 h1 {
-    color: white;
+    color: var(--text_light);
     background-color: var(--paella);
     padding: 1rem;
     text-align: center;
@@ -67,7 +67,7 @@ tr td:first-child {
 
 footer {
     background-color: var(--paella);
-    color: white;
+    color: var(--text_light);
     text-align: center;
     padding: .5rem;
     
@@ -93,7 +93,7 @@ footer {
 
     h2 {
         background-color: var(--tortilla);
-        color: white;
+        color: var(--text_dark);
         padding: .5rem;
         margin: 1rem 1rem 1rem -0.2rem;
         text-align: left;
