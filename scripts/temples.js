@@ -30,14 +30,14 @@ const temples = [
     location: "Aba, Nigeria",
     dedicated: "2005, August, 7",
     area: 11500,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
+    imageUrl: "images/nigeria_temple.webp"
   },
   {
     templeName: "Manti Utah",
     location: "Manti, Utah, United States",
     dedicated: "1888, May, 21",
     area: 74792,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
+    imageUrl: "images/manti_temple.jpg"
   },
   {
     templeName: "Payson Utah",
@@ -106,35 +106,41 @@ nonUtahLink.addEventListener('click', () => {
   // Clear previous cards
   document.querySelector("#album").innerHTML = "";
   createTempleCard(temples.filter(temple => !temple.location.includes('Utah')));
-  
+
 });
 
 
 
 function createTempleCard(filteredTemples) {
-  filteredTemples.forEach(temple => {
-  let card = document.createElement("section");
-  let name = document.createElement("h3");
-  let location = document.createElement("p");
-  let dedication = document.createElement("p");
-  let area = document.createElement("p");
-  let img = document.createElement("img");
+  filteredTemples.forEach((temple, index) => {
+    let card = document.createElement("section");
+    let name = document.createElement("h3");
+    let location = document.createElement("p");
+    let dedication = document.createElement("p");
+    let area = document.createElement("p");
+    let img = document.createElement("img");
 
-  name.textContent = temple.templeName;
-  location.inneHTML = `<span calass="label">Location:</span> ${temple.location}`;
-  dedication.inneHTML = `<span calass="label">Dedication:</span> ${temple.dedication}`;
-  area.inneHTML = `<span calass="label">Size:</span> ${temple.area} sq ft`;
-  img.setAttribute("src", temple.imageUrl);
-  img.setAttribute("alt", `${temple.templeName} Temple`);
-  img.setAttribute("loading", "lazy");
+    name.textContent = temple.templeName;
+    location.inneHTML = `<span calass="label">Location:</span> ${temple.location}`;
+    dedication.inneHTML = `<span calass="label">Dedication:</span> ${temple.dedication}`;
+    area.inneHTML = `<span calass="label">Size:</span> ${temple.area} sq ft`;
 
-  card.appendChild(name);
-  card.appendChild(location);
-  card.appendChild(dedication);
-  card.appendChild(area);
-  card.appendChild(img);
+    img.setAttribute("src", temple.imageUrl);
+    img.setAttribute("alt", `${temple.templeName} Temple`);
+    img.setAttribute("width", "600");
+    img.setAttribute("height", "400");
 
-  document.querySelector("#album").appendChild(card);
-});
+    if (index !== 0) {
+      img.setAttribute("loading", "lazy");
+    }
+
+    card.appendChild(name);
+    card.appendChild(location);
+    card.appendChild(dedication);
+    card.appendChild(area);
+    card.appendChild(img);
+
+    document.querySelector("#album").appendChild(card);
+  });
 }
 

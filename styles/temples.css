@@ -13,7 +13,7 @@ main,
 footer {
    margin: 0 auto;
    background-color: #FFD20A;
-   color: #5f5945;
+   color: black;
 }
 
 main {
@@ -108,7 +108,7 @@ footer {
 }
 
 #lastModified {
-   color: rgb(255, 0, 0);
+   color:black;
    text-align: center;
    font-size: smaller;
    display: grid;
