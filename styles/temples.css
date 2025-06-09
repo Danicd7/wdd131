@@ -28,7 +28,7 @@ header span {
    font-size: 1.50rem;
    margin-top: 10px;
    padding: 10px;
-   
+
 
 }
 
@@ -96,19 +96,13 @@ section {
    grid-gap: 25px;
 }
 
-img {
-   width: 100%;
-   height: auto;
-   margin: .5rem;
-}
-
 footer {
    text-align: center;
    padding: 10px;
 }
 
 #lastModified {
-   color:black;
+   color: black;
    text-align: center;
    font-size: smaller;
    display: grid;
@@ -119,6 +113,9 @@ img {
    border: 1px solid green;
    background: #000;
    animation: fade 15s;
+   width: 100%;
+   height: auto;
+   margin: .5rem;
 }
 
 @keyframes fade {
@@ -129,4 +126,29 @@ img {
    100% {
       opacity: 1;
    }
+}
+
+@media (min-width: 640px) {
+   nav ul {
+      display: flex !important;
+
+   }
+
+   header {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+   }
+
+   nav ul li {
+      flex: 1 1 100%;
+   }
+
+   .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+   }
+
 }

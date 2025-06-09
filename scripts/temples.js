@@ -109,6 +109,37 @@ nonUtahLink.addEventListener('click', () => {
 
 });
 
+document.querySelector('a[title="Old"]').addEventListener('click', () => {
+  document.querySelector("#album").innerHTML = "";
+  createTempleCard(temples.filter(temple => {
+    const year = parseInt(temple.dedicated.split(",")[0]);
+    return year < 1900;
+  }));
+});
+
+document.querySelector('a[title="New"]').addEventListener('click', () => {
+  document.querySelector("#album").innerHTML = "";
+  createTempleCard(temples.filter(temple => {
+    const year = parseInt(temple.dedicated.split(",")[0]);
+    return year >= 2000;
+  }));
+});
+
+document.querySelector('a[title="Large"]').addEventListener('click', () => {
+  document.querySelector("#album").innerHTML = "";
+  createTempleCard(temples.filter(temple => temple.area > 90000));
+});
+
+document.querySelector('a[title="Small"]').addEventListener('click', () => {
+  document.querySelector("#album").innerHTML = "";
+  createTempleCard(temples.filter(temple => temple.area < 10000));
+});
+
+document.querySelector('a[title="Home"]').addEventListener('click', () => {
+  document.querySelector("#album").innerHTML = "";
+  createTempleCard(temples); // Show all
+});
+
 
 
 function createTempleCard(filteredTemples) {
@@ -121,9 +152,9 @@ function createTempleCard(filteredTemples) {
     let img = document.createElement("img");
 
     name.textContent = temple.templeName;
-    location.inneHTML = `<span calass="label">Location:</span> ${temple.location}`;
-    dedication.inneHTML = `<span calass="label">Dedication:</span> ${temple.dedication}`;
-    area.inneHTML = `<span calass="label">Size:</span> ${temple.area} sq ft`;
+    location.inneHTML = `<span class="label">Location:</span> ${temple.location}`;
+    dedication.inneHTML = `<span class="label">Dedication:</span> ${temple.dedication}`;
+    area.inneHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
 
     img.setAttribute("src", temple.imageUrl);
     img.setAttribute("alt", `${temple.templeName} Temple`);
